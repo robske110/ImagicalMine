@@ -108,7 +108,7 @@ class MainLogger extends \AttachableThreadedLogger{
 		if($this->logDebug === false){
 			return;
 		}
-		$this->send($message, \LogLevel::DEBUG, "debug", TextFormat::AQUA);
+		$this->send($message, \LogLevel::DEBUG, "DEBUG", TextFormat::AQUA);
 	}
 
 	/**
