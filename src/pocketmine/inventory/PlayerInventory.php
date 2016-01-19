@@ -238,7 +238,7 @@ class PlayerInventory extends BaseInventory{
 		$old = $this->getItem($index);
 		$this->slots[$index] = clone $item;
 		$this->onSlotChange($index, $old);
-		if($this->getHolder()->isSurvival()) $this->sendContents($this->getHolder());
+		//if($this->getHolder()->isSurvival()) $this->sendContents($this->getHolder()); //Caused Slapper CRASH!
 
 		return true;
 	}
@@ -423,12 +423,12 @@ class PlayerInventory extends BaseInventory{
 
 	public function addItem(...$slots) {
 		$result = parent::addItem(...$slots);
-		if($this->getHolder()->isSurvival()) $this->sendContents($this->getHolder());
+		if($this->getHolder()->isSurvival()) $this->sendContents($this->getHolder()); //Will cause CRASH too
 		return $result;
 	}
 	public function removeItem(...$slots){
 		$result = parent::removeItem(...$slots);
-		if($this->getHolder()->isSurvival()) $this->sendContents($this->getHolder());
+		if($this->getHolder()->isSurvival()) $this->sendContents($this->getHolder()); //Will cause CRASH too
 		return $result;
 	}
 	/**
