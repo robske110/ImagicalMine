@@ -242,7 +242,7 @@ class PlayerInventory extends BaseInventory{
 		$HOLDER = $this->getHolder();
 		if(!is_null($HOLDER)) //Fixes Slapper Crash, as Slapper has no "HOLDER"
 		{
-			if($this->getHolder()->isSurvival()) $this->sendContents($this->getHolder());
+			if($HOLDER->isSurvival()) $this->sendContents($HOLDER);
 		}
 
 		return true;
