@@ -238,11 +238,6 @@ class PlayerInventory extends BaseInventory{
 		$old = $this->getItem($index);
 		$this->slots[$index] = clone $item;
 		$this->onSlotChange($index, $old);
-				$HOLDER = $this->getHolder();
-		if(!is_null($HOLDER)) //Fixes Slapper Crash, as Slapper has no "HOLDER"
-		{
-			if($HOLDER->isSurvival()) $this->sendContents($HOLDER);
-		}
 
 		return true;
 	}
