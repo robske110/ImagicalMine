@@ -2556,7 +2556,10 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 				){
 					$cancelled = true;
 				}
+				if(isset($target))
+				{
 				$target->onPlayerAction($this, $packet->action);
+				}
 				// @todo move this to the entity
 				//if($target instanceof Boat or $target instanceof Minecart){
 				if($target instanceof Boat) {
